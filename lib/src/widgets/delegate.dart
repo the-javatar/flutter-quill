@@ -351,7 +351,7 @@ class EditorTextSelectionGestureDetectorBuilder {
       onDoubleTapDown: onDoubleTapDown,
       onSecondarySingleTapUp: onSecondarySingleTapUp,
       onDragSelectionStart: onDragSelectionStart,
-      onDragSelectionUpdate: onDragSelectionUpdate,
+      // onDragSelectionUpdate: onDragSelectionUpdate,
       onDragSelectionEnd: onDragSelectionEnd,
       behavior: behavior,
       child: child,

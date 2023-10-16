@@ -1635,7 +1635,7 @@ class RenderEditor extends RenderEditableContainerBox
   }
 }
 
-class QuillVerticalCaretMovementRun extends Iterator<TextPosition> {
+class QuillVerticalCaretMovementRun extends NIterator {
   QuillVerticalCaretMovementRun._(
     this._editor,
     this._currentTextPosition,
@@ -1890,5 +1890,19 @@ class RenderEditableContainerBox extends RenderBox
     resolvePadding();
     return defaultComputeDistanceToFirstActualBaseline(baseline)! +
         _resolvedPadding!.top;
+  }
+}
+
+class NIterator implements Iterator {
+  NIterator();
+
+  @override
+  // TODO: implement current
+  get current => throw UnimplementedError();
+
+  @override
+  bool moveNext() {
+    // TODO: implement moveNext
+    throw UnimplementedError();
   }
 }

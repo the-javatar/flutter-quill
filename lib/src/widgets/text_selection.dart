@@ -769,7 +769,7 @@ class EditorTextSelectionGestureDetector extends StatefulWidget {
   /// The frequency of calls is throttled to avoid excessive text layout
   /// operations in text fields. The throttling is controlled by the constant
   /// [_kDragSelectionUpdateThrottle].
-  final DragSelectionUpdateCallback? onDragSelectionUpdate;
+  final DragTextSelection? onDragSelectionUpdate;
 
   /// Called when a mouse that was previously dragging is released.
   final GestureDragEndCallback? onDragSelectionEnd;
@@ -910,8 +910,8 @@ class _EditorTextSelectionGestureDetectorState
     assert(_lastDragStartDetails != null);
     assert(_lastDragUpdateDetails != null);
     if (widget.onDragSelectionUpdate != null) {
-      widget.onDragSelectionUpdate!(
-          _lastDragStartDetails!, _lastDragUpdateDetails!);
+      // widget.onDragSelectionUpdate!(
+      //     _lastDragStartDetails!, _lastDragUpdateDetails!);
     }
     _dragUpdateThrottleTimer = null;
     _lastDragUpdateDetails = null;
