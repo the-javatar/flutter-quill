@@ -76,8 +76,7 @@ class _LinkStyleButtonState extends State<LinkStyleButton> {
             : (widget.iconTheme?.iconUnselectedColor ?? theme.iconTheme.color),
       ),
       fillColor: isToggled
-          ? (widget.iconTheme?.iconSelectedFillColor ??
-              theme.toggleableActiveColor)
+          ? (widget.iconTheme?.iconSelectedFillColor ?? theme.primaryColor)
           : (widget.iconTheme?.iconUnselectedFillColor ?? theme.canvasColor),
       borderRadius: widget.iconTheme?.borderRadius ?? 2,
       onPressed: pressedHandler,
