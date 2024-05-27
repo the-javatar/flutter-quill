@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_quill/extensions.dart' as base;
 import 'package:flutter_quill/flutter_quill.dart' hide Text;
 import 'package:flutter_quill/translations.dart';
-import 'package:gallery_saver/gallery_saver.dart';
-import 'package:math_keyboard/math_keyboard.dart';
+// import 'package:gallery_saver/gallery_saver.dart';
+// import 'package:math_keyboard/math_keyboard.dart';
 import 'package:tuple/tuple.dart';
 
 import 'utils.dart';
@@ -176,37 +176,37 @@ class VideoEmbedBuilder implements EmbedBuilder {
   }
 }
 
-class FormulaEmbedBuilder implements EmbedBuilder {
-  @override
-  String get key => BlockEmbed.formulaType;
+// class FormulaEmbedBuilder implements EmbedBuilder {
+//   @override
+//   String get key => BlockEmbed.formulaType;
 
-  @override
-  Widget build(
-    BuildContext context,
-    QuillController controller,
-    base.Embed node,
-    bool readOnly,
-  ) {
-    assert(!kIsWeb, 'Please provide formula EmbedBuilder for Web');
+//   @override
+//   Widget build(
+//     BuildContext context,
+//     QuillController controller,
+//     base.Embed node,
+//     bool readOnly,
+//   ) {
+//     assert(!kIsWeb, 'Please provide formula EmbedBuilder for Web');
 
-    final mathController = MathFieldEditingController();
-    return Focus(
-      onFocusChange: (hasFocus) {
-        if (hasFocus) {
-          // If the MathField is tapped, hides the built in keyboard
-          SystemChannels.textInput.invokeMethod('TextInput.hide');
-          debugPrint(mathController.currentEditingValue());
-        }
-      },
-      child: MathField(
-        controller: mathController,
-        variables: const ['x', 'y', 'z'],
-        onChanged: (value) {},
-        onSubmitted: (value) {},
-      ),
-    );
-  }
-}
+//     final mathController = MathFieldEditingController();
+//     return Focus(
+//       onFocusChange: (hasFocus) {
+//         if (hasFocus) {
+//           // If the MathField is tapped, hides the built in keyboard
+//           SystemChannels.textInput.invokeMethod('TextInput.hide');
+//           debugPrint(mathController.currentEditingValue());
+//         }
+//       },
+//       child: MathField(
+//         controller: mathController,
+//         variables: const ['x', 'y', 'z'],
+//         onChanged: (value) {},
+//         onSubmitted: (value) {},
+//       ),
+//     );
+//   }
+// }
 
 Widget _menuOptionsForReadonlyImage(
     BuildContext context, String imageUrl, Widget image) {
@@ -221,11 +221,11 @@ Widget _menuOptionsForReadonlyImage(
                 text: 'Save'.i18n,
                 onPressed: () {
                   imageUrl = appendFileExtensionToImageUrl(imageUrl);
-                  GallerySaver.saveImage(imageUrl).then((_) {
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text('Saved'.i18n)));
-                    Navigator.pop(context);
-                  });
+                  // GallerySaver.saveImage(imageUrl).then((_) {
+                  //   ScaffoldMessenger.of(context)
+                  //       .showSnackBar(SnackBar(content: Text('Saved'.i18n)));
+                  //   Navigator.pop(context);
+                  // });
                 },
               );
               final zoomOption = _SimpleDialogItem(
